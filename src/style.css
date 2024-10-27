@@ -1,0 +1,471 @@
+/*fonts*/
+@import url('https://fonts.googleapis.com/css?family=Raleway:900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Zen+Dots&display=swap');
+/*fonts*/
+
+/*base*/
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: helvetica, arial, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    cursor: none;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 2560px;
+}
+/*base*/
+
+/*cursor*/
+.custom-cursor{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    display: none;
+    pointer-events: none;
+}
+
+.site-wide{
+    width:30px;
+    height:30px;
+    border-radius:50%;
+    border:2px solid black;
+}
+
+.site-wide .pointer{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:5px;
+    height:5px;
+    border-radius: 50%;
+    background-color: black;
+    transition: width 0.1s ease-in-out, width 0.1s ease-in-out;
+}
+
+.site-wide.active .pointer{
+    width:20px;
+    height:20px;
+}
+
+#mouse-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    font-size: 1.2em;
+    color: #000000;
+    z-index: 99;
+}
+/*cursor*/
+
+
+
+
+
+
+/*inputBox*/
+.entryarea {
+    position: relative;
+    height: 50px;
+    line-height: 45px;
+    width: calc(10% + 20px);
+}
+
+input {
+    position: absolute;
+    width: 100%;
+    outline: none;
+    padding: 0 15px;
+    font-size: 1.2em;
+    line-height: 40px;
+    border-radius: 10px;
+    border: 2px solid #000000;
+    background: transparent;
+    transition: 0.1s ease;
+    z-index: 1;
+
+    white-space: nowrap; /* Prevents wrapping of the text */
+    overflow: hidden; /* Hides text that goes beyond the max width */
+    text-overflow: ellipsis; /* Adds "..." when text overflows */
+
+    padding-right: 80px;
+}
+
+.labelline {
+    position: absolute;
+    font-size: 1.0em;
+    padding: 0 10px;
+    margin: 0 20px;
+    background-color: #FFFFFF;
+    transition: 0.2s ease;
+}
+
+input:focus,
+input:valid {
+    border: 3px solid #000000;
+}
+
+input:focus + .labelline,
+input:valid + .labelline {
+    height: 30px;
+    line-height: 30px;
+    transform: translate(-5px, -13px) scale(0.88);
+    z-index: 1;
+}
+/*inputBox*/
+
+
+
+
+
+/* Answer Box */
+.answerarea {
+    display: none; /* Initially hidden */
+    position: fixed;
+    left: 9.4vw;
+    top: 55vh;
+    padding: 15px 15px; /* Reduce padding to align content closer to the top */
+    border: 3px solid #000000;
+    border-radius: 15px;
+    width: calc(20% + 100px);
+    margin-top: 20px;
+    font-family: "Zen Dots", sans-serif;
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+    text-align: left; /* Optional: align text to the left if necessary */
+}
+
+/* Answer Box */
+
+
+
+/*sendButton*/
+a
+{
+    position: absolute;
+    right:-80px;
+    bottom: 12.5px;
+    display: inline-block;
+    line-height: 20px;
+    padding: 5px 10px;
+    color: #000000;
+    text-decoration: none;
+    font-size: 1.0em;
+    overflow: hidden;
+    transition: 0.2s;
+    border-radius: 8px;
+    z-index: 2;
+}
+
+a:hover
+{
+    color:#FFFFFF;
+    background: #000000;
+    transition-delay: 1s;
+}
+
+a:active
+{
+    color:#FFFFFF;
+    background: #4B4B4B;
+    transition-delay: 1s;
+}
+
+
+a span
+{
+    position: absolute;
+    display: block;
+}
+a span:nth-child(1)
+{
+    top: 0;
+    left: -100%;
+    width:100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent,#000000);
+}
+a:hover span:nth-child(1)
+{
+    left: 100%;
+    transition: 1s;
+}
+
+a span:nth-child(2)
+{
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent,#000000);
+}
+a:hover span:nth-child(2)
+{
+    top: 100%;
+    transition: 1s;
+    transition-delay: 0.25s;
+}
+
+a span:nth-child(3)
+{
+    bottom: 0;
+    right: -100%;
+    width:100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent,#000000);
+}
+a:hover span:nth-child(3)
+{
+    right: 100%;
+    transition: 1s;
+    transition-delay: 0.5s;
+}
+
+a span:nth-child(4)
+{
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent,#000000);
+}
+a:hover span:nth-child(4)
+{
+    bottom: 100%;
+    transition: 1s;
+    transition-delay: 0.75s;
+}
+/*sendButton*/
+
+/*small header*/
+.small_header {
+    position: absolute;
+    left: 9vw;
+    top: 35vh;
+    font-size: 2.0em;
+    line-height: 5vh;
+    font-family: "Zen Dots", sans-serif;
+    color: black;
+    width: 35%;
+    word-wrap: break-word;
+    word-break: break-word;
+    white-space: normal;
+}
+
+
+/*textInstr*/
+.instructions {
+    position: absolute;
+    margin-top: 70px;
+    margin-left: 30px;
+    font-size: 0.9em;
+    line-height: 2vh;
+    color: #666;
+}
+
+.instr {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.hoverable:hover {
+    font-weight: bold;
+    color: black;
+}
+/*textInstr*/
+
+/*soulModel*/
+#three-container {
+    width: calc(40% + 200px);
+    min-height: calc(40% + 200px);
+    margin: 20px;
+    position: relative;
+}
+/*soulModel*/
+
+/*mobileInstr*/
+#instr-overlay {
+    display: none;
+    pointer-events: none;
+}
+
+#bottom-text {
+    display: none;
+    pointer-events: none;
+}
+
+#center-text {
+    display: none;
+    pointer-events: none;
+}
+/*mobileInstr*/
+
+
+/*media*/
+
+@media (min-width: 1101px) {
+    .container {
+        flex-direction: row;
+    }
+
+    .entryarea {
+        width: calc(20% + 100px);
+        margin-right: 20px;
+        transition: all 0.5s ease;
+    }
+
+    #three-container {
+        width: calc(70% - 120px);
+        margin-top: 0;
+        transition: all 0.5s ease;
+    }
+
+    .small_header {
+        top:35vh;
+        left:16vh;
+        position: absolute;
+        font-size: 2.0em;
+        line-height: 5vh;
+        font-family: "Zen Dots", sans-serif;
+        color: black;
+        width: 30%;
+        word-wrap: break-word;
+        word-break: break-word;
+        white-space: normal;
+    }
+}
+
+
+@media (max-width: 1100px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        transition: all 0.5s ease;
+    }
+
+    .entryarea {
+        width: calc(80% - 60px);
+        position: absolute;
+        bottom: 20px;
+        left: 37%;
+        transform: translateX(-50%);
+    }
+
+    #three-container {
+        width: calc(90% - 20px);
+        height: calc(40% - 20px);
+        margin: 20px 0;
+        transition: all 0.5s ease;
+    }
+
+    .instructions {
+        position: absolute;
+        margin-top: -15vh;
+        margin-left: 30px;
+        font-size: 0.9em;
+        line-height: 2vh;
+        color: #666;
+    }
+
+    .instr {
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .instr3 {
+        display: none;
+        visibility: hidden;
+    }
+
+    .instr4 {
+        display: none;
+        visibility: hidden;
+    }
+
+    .small_header {
+        top:4vh;
+        left:4vh;
+        position: absolute;
+        font-size: 2.0em;
+        line-height: 5vh;
+        font-family: "Zen Dots", sans-serif;
+        color: black;
+        width: 80%;
+        word-wrap: break-word;
+        word-break: break-word;
+        white-space: normal;
+    }
+
+    .custom-cursor{
+        display: none;
+    }
+
+    .site-wide{
+        display: none;
+    }
+
+    .site-wide .pointer{
+        display: none;
+    }
+
+    #mouse-text {
+        display: none;
+    }
+
+    #instr-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.8);
+        display: flex;
+        pointer-events: all;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 999;
+    }
+
+    #bottom-text {
+        display: block;
+        position: absolute;
+        bottom: 60px;
+        font-size: 1em;
+        color: #000;
+    }
+
+    #center-text {
+        display: block;
+        font-size: 1em;
+        color: #000;
+    }
+
+    /* Answer Box */
+    .answerarea {
+        left: 5vw;
+        top: 70vh;
+        padding: 15px 15px; /* Reduce padding to align content closer to the top */
+        border-radius: 15px;
+        font-size: 0.1em;
+        width: calc(80% + 40px);
+        margin-top: 20px;
+    }
+
+    /* Answer Box */
+
+
+}
+/*media*/

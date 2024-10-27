@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>cancer.ai</title>
+  <link rel="stylesheet" href="/src/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
+  <script type="module" src="/src/script.js"></script>
+</head>
+<body>
+<div class="custom-cursor site-wide">
+  <div class="pointer"></div>
+</div>
+<div id="mouse-text"></div>
+
+<div id="instr-overlay">
+  <div id="center-text">Voice Control By Click Me </div>
+  <div id="bottom-text">Ask anything about me Here! ️</div>
+</div>
+
+<div class="small_header">
+  Medical Care for Cancer Patients
+</div>
+
+<div class="container">
+  <div class="entryarea">
+    <input type="text" id="userInput" maxlength="" required>
+    <div class="labelline">Enter Here</div>
+    <a href="#" id="sendButton">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      Send
+    </a>
+    <div class="instructions">
+      <p class="instr">Try Asking:</p>
+      <p class="instr1 hoverable">What are my treatment options?</p>
+      <p class="instr2 hoverable">How can I manage pain or discomfort?</p>
+      <p class="instr3 hoverable">Are there support groups?</p>
+      <p class="instr4 hoverable">Are there any clinical trials?</p>
+    </div>
+  </div>
+  <div id="three-container"></div>
+</div>
+
+<div class="answerarea">
+  <div id="response"> </div>
+</div>
+<script src="/src/app.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="/src/cursor.js"></script>
+</body>
+</html>
