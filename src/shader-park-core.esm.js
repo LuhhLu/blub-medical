@@ -44442,6 +44442,10 @@ function replaceMathOps(codeSrc) {
   return escodegen$1.generate(tree);
 }
 function sculptToGLSL(userProvidedSrc) {
+    if (!userProvidedSrc) {
+        console.error("Input is undefined.");
+        return;  // Early return if input is not defined
+    }
   var PI = Math.PI;
   var TWO_PI = Math.PI * 2;
   var TAU = TWO_PI;
